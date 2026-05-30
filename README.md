@@ -4,36 +4,54 @@
   </p>
 </div>
 
+# NoDPI
+<b><i>Say NO to blocking!</b></i>
 
-# NoDPI4Android
-*Say NO to blocking!*
-
-[![Visitors](https://visitor-badge.laobi.icu/badge?page_id=GVCoder09.NoDPI4Android)]()
+[![Visitors](https://visitor-badge.laobi.icu/badge?page_id=GVCoder09.NoDPI4Android)](https://github.com/GVCoder09/NoDPI4Android)
+[![License: GPL-3.0](https://img.shields.io/badge/License-GPL3.0-yellow.svg)](https://www.gnu.org/licenses/gpl-3.0.txt)
+[![GitHub Release](https://img.shields.io/github/v/release/GVCoder09/NoDPI4Android)](https://github.com/GVCoder09/NoDPI4Android)
+[![Github All Releases](https://img.shields.io/github/downloads/GVCoder09/NoDPI4Android/total.svg)](https://github.com/GVCoder09/NoDPI4Android)
+[![Github Latest Release](https://img.shields.io/github/downloads/GVCoder09/NoDPI4Android/latest/total.svg)](https://github.com/GVCoder09/NoDPI4Android)
+[![GitHub Stars](https://img.shields.io/github/stars/GVCoder09/NoDPI4Android.svg?style=dark)](https://github.com/GVCoder09/NoDPI4Android)
+[![GitHub Forks](https://img.shields.io/github/forks/GVCoder09/NoDPI4Android.svg?style=dark)](https://github.com/GVCoder09/NoDPI4Android)
+[![GitHub Last commit](https://img.shields.io/github/last-commit/GVCoder09/NoDPI4Android.svg?style=dark)](https://github.com/GVCoder09/NoDPI4Android)
 
 > [!IMPORTANT]
-> **Do not confuse with https://github.com/raspabamos/nodpi !**
+> This project is a fork of the repository https://github.com/theo0x0/nodpi and is developed independently. Do not confuse with https://github.com/raspabamos/nodpi !
 
-## Description / Описание
-NoDPI4Android is a graphical add-on [NoDPI](https://github.com/GVCoder09/NoDPI). This application is designed to run on Android devices only, Windows and Linux version available [here](https://github.com/GVCoder09/NoDPI/releases)
+> [!NOTE]
+> This version is only for Android. **The Desktop version is available here:** https://github.com/GVCoder09/NoDPI
 
-NoDPI is a utility for bypassing the DPI (Deep Packet Inspection) system. DPI is widely used by Internet providers and government agencies to block access to Internet resources. This utility allows you to bypass such blocking and freely use the Internet. In particular, it allows you to eliminate the blocking of YouTube in Russia.
+**Read this in other languages / Читайте на других языках**
+- **[English](README.md)**
+- [Русский](README.ru.md)
 
-Unfortunately, I cannot guarantee the absolute functionality of the program in all conditions and with all providers, but in most cases it copes with its task perfectly.
-The utility works on the principle of an HTTP proxy. It analyzes all TLS handshakes passing through it and fragments them if they are addressed to blocked domains. Currently, DPI does not have the capacity to collect these fragments and analyze them, so NoDPI manages to "fool" it.
+## Table of Content
 
-All code is written entirely in Python and uses libraries such as Kivy and KivyMD
+- [NoDPI](#nodpi)
+  - [Table of Content](#table-of-content)
+  - [Description](#description)
+    - [How does this work](#how-does-this-work)
+    - [Sites currently unavailable via NoDPI](#sites-currently-unavailable-via-nodpi)
+    - [Alternatives](#alternatives)
+      - [Android](#android)
+      - [Other platforms](#other-platforms)
+  - [System requirements](#system-requirements)
+  - [Terms of Use and Disclaimer](#terms-of-use-and-disclaimer)
+  - [Quick start](#quick-start)
+    - [Additional Blacklists](#additional-blacklists)
+  - [Building APK from source code](#building-apk-from-source-code)
+  - [FAQ](#faq)
+  - [Star History](#star-history)
 
-<hr>
+## Description
+  NoDPI4Android is a graphical add-on [NoDPI](https://github.com/GVCoder09/NoDPI). This application is designed to run on Android devices only, Windows and Linux version available [here](https://github.com/GVCoder09/NoDPI/releases)
 
-NoDPI4Android — это графическая надстройка над [NoDPI](https://github.com/GVCoder09/NoDPI). Это приложение предназначено для работы только на устройствах Android, версии для Windows и Linux доступны [здесь](https://github.com/GVCoder09/NoDPI/releases)
+  NoDPI is a utility designed to bypass DPI (Deep Packet Inspection). What is DPI? DPI is a technology for inspecting network packets based on their content to regulate and filter traffic. It is often used by internet service providers to censor and block access to certain web resources and protocols. The goal of this program is to "trick" DPI by modifying network packets, although in reality, this trickery is often simply a consequence of a lack of computing resources and time. 
+ 
+  This utility was developed primarily for Russian users as a simpler (but less powerful) replacement for similar tools. In most cases, it gets the job done; in particular, it allows you to use YouTube without any problems.
 
-NoDPI - это утилита для обхода системы DPI (Deep Packet Inspection). DPI широко используется интерент-провайдерами и гос. органами для блокировки доступа к интерент-ресурсам. Данная утилита позволяет обходить такие блокировки и свободно пользоваться Интернетом. В частности, она позволяет устранить блокировку YouTube в России.
-
-К сожалению, я не могу гарантировать абсолютную работоспособность программы во всех условиях и у всех провайдеров, но в большинстве случаев она отлично справляется со своей задачей.
-
-Утилита работает по принципу HTTP прокси. Она анализирует все  проходящие через нее TLS handshake и фрагментирует их, если они адресованы заблокированным доменам. В настоящее время у DPI нет таких мощностей, чтобы собиртаь эти фрагменты и анализировать их, поэтому NoDPI получается ее "обмануть".
-
-Весь код написан полностью на Python и использует такие библиотеки, как Kivy и KivyMD.
+  But unfortunately, the absolute performance of this utility cannot be guaranteed. Some sites, such as YouTube, are good to unlock, while others, as Instagram.com or Facebook.com, require completely different methods for bypassing locks, which are not yet implemented in this utility from their low-leveling and difficulty. Sometimes, the performance of certain sites can also depend on the provider - how it blocks the site and what technical means applies.
 
 <div align="center">
   <p>
@@ -41,23 +59,47 @@ NoDPI - это утилита для обхода системы DPI (Deep Packe
   </p>
 </div>
 
-### System requirements / Системные требования
-The application requires Android 5.0 and above.
-The application also uses permission to send notifications. For the correct operation of the proxy service, it is recommended to disable energy consumption optimization in the application's system settings
+### How does this work
 
-<hr/>
+NoDPI launches a proxy server on your computer through which you direct http(s) traffic. The program intercepts ClientHello of outing connections and fragments them according to one of the following methods:
 
-Для работы приложения требуется Андроид 5.0 и выше.
-Также приложение использует разрешение на отправку уведомлений. Для корректной работы сервиса прокси рекомендуется отключить оптимизацию энергопотребления в системных настройках приложения
+*Fragmentation by SNI  (by default)*
 
-### Alternatives / Альтернативы
+The packet contains a field containing the SNI record. The ClientHello is split into several TLS records: the pre-SNI portion, the SNI character-by-character, and the post-SNI portion. Each portion is appended with a header indicating the ClientHello type, and then the entire packet is sent in a single packet.
+
+*Random fragmentation*
+
+Clienthello is divided into several parts of random length. Each part is glued with the prefixes of the type of Clienthello and then all this is sent in one package.
+
+Also regardless of the method, the TLS version is replaced by version 1.3, which is the most modern (but this does not mean that your data begins to be transmitted according to the specifications of this version). All this together allows you to get around the lock. Apparently DPI does not yet have the necessary capacities to unravel this "ball" and simply ignore such traffic, saving time and effort. But it is possible that soon these methods will not be workers.
+
+> [!IMPORTANT]
+> NoDPI only works with HTTPS traffic. He can also take HTTP traffic, but purely for compatibility - sites working through this outdated protocol are practically not subject to unlock and the program simply sends traffic to the addressee.
+
+NoDPI does not collect and does not send any data about you, does not use any third - party programs and libraries, does not interfere in the system processes and does not require administrator rights to work.
+
+All code is written entirely in Python and uses libraries such as Kivy and KivyMD
+
+### Sites currently unavailable via NoDPI
+
+As of May 2026, the following services and websites cannot be unblocked using NoDPI:
+- Instagram
+- Facebook
+- X (Twitter)
+- Telegram
+- WhatsApp 
+- Voice and video in Discord
+
+### Alternatives
 
 #### Android
+
 - **[DPI Tunnel for Android](https://github.com/nomoresat/DPITunnel-android)** by @zhenyolka (for Android)
 - **[PowerTunnel for Android](https://github.com/krlvm/PowerTunnel-Android)** by @krlvm (for Android)
 - **[ByeDPIAndroid](https://github.com/dovecoteescapee/ByeDPIAndroid/)** for Android
 
 #### Other platforms
+
 - **[NoDPI](https://github.com/GVCoder09/GoodbyeDPI)** by @GVCoder09 (for Windows and Linux)
 - **[GoodbyeDPI](https://github.com/ValdikSS/GoodbyeDPI)** by @ValdikSS (for Windows)
 - **[zapret](https://github.com/bol-van/zapret)** by @bol-van (for MacOS, Linux and Windows)
@@ -65,13 +107,20 @@ The application also uses permission to send notifications. For the correct oper
 - **[DPI Tunnel CLI](https://github.com/nomoresat/DPITunnel-cli)** by @zhenyolka (for Linux and routers)
 - **[PowerTunnel](https://github.com/krlvm/PowerTunnel)** by @krlvm (for Windows, MacOS and Linux)
 - **[SpoofDPI](https://github.com/xvzc/SpoofDPI)** by @xvzc (for macOS and Linux)
+- **[SpoofDPI-Platform](https://github.com/r3pr3ss10n/SpoofDPI-Platform)** by @r3pr3ss10n (for Android, macOS, Windows)
 - **[GhosTCP](https://github.com/macronut/ghostcp)** by @macronut (for Windows)
 - **[ByeDPI](https://github.com/hufrea/byedpi)** for Linux/Windows
 - **[youtubeUnblock](https://github.com/Waujito/youtubeUnblock/)** by @Waujito (for OpenWRT/Entware routers and Linux)
 
-## Terms of Use and Disclaimer / Условия использования и отказ от ответственности
-> [!IMPORTANT]
-> This provision is in addition to the license and takes precedence over it.
+## System requirements
+
+The application requires Android 7.0 and above.
+The application also uses permission to send notifications. For the correct operation of the proxy service, it is recommended to disable energy consumption optimization in the application's system settings
+
+## Terms of Use and Disclaimer
+
+> [!WARNING]
+> By using this software in any form or distributing it, you accept the following terms of use and disclaimer
 
 The developer and/or supplier of this software shall not be liable for any loss or damage, including but not limited to direct, indirect, incidental, punitive or consequential damages arising out of the use of or inability to use this software, even if the developer or supplier has been advised of the possibility of such damages.
 
@@ -83,40 +132,20 @@ This software may not be used for illegal or unlawful purposes. Any use of the s
 
 Your use of this software constitutes your agreement to the terms of this disclaimer. If you do not agree to these terms, you must stop using this software immediately.
 
-<hr>
+## Quick start
 
-> [!IMPORTANT]
-> Данное положение является дополнением к лицензии и является приоритетным по отношению к ней.
-
-Разработчик и/или поставщик данного программного обеспечения не несет никакой ответственности за любые убытки или ущерб, включая, но не ограничиваясь, прямые, косвенные, случайные, штрафные или косвенные убытки, возникшие в результате использования или невозможности использования данного программного обеспечения, даже если разработчик или поставщик были уведомлены о возможности таких убытков.
-
-Разработчик и/или поставщик данного программного обеспечения не несут ответственности за любые юридические последствия, возникшие в результате использования данного программного обеспечения. Это включает, но не ограничивается, нарушение законодательства, правил или нормативных актов, а также любые претензии или иски, возникшие в результате использования данного программного обеспечения. Пользователь несет полную ответственность за соблюдение всех применимых законов и нормативных актов при использовании данного программного обеспечения.
-
-Разработчик и/или поставщик данного программного обеспечения не несут ответственности за любые убытки или ущерб, возникшие в результате неправомерного использования данного программного обеспечения. Неправомерное использование включает, но не ограничивается, использование программного обеспечения для незаконных целей, нарушение авторских прав, патентных прав, торговых марок или других прав интеллектуальной собственности, а также использование программного обеспечения в нарушение условий лицензии данного программного обеспечения.
-
-Данное программное обеспечение не может использоваться в противоправных целях или целях, нарушающих законодательство. Любое использование программного обеспечения для незаконных действий, включая, но не ограничиваясь, мошенничество, взлом, нарушение конфиденциальности, распространение вредоносного ПО или любые другие действия, противоречащие закодательству и нормативным актам, строго запрещено. Пользователь несет полную ответственность за любые юридические последствия, возникшие в результате использования данного программного обеспечения в противоправных целях.
-
-Использование данного программного обеспечения означает ваше согласие с условиями данного отказа от ответственности. Если вы не согласны с этими условиями, вы должны немедленно прекратить использование данного программного обеспечения.
-
-## Quick start / Быстрый старт
 1) Download the latest version from [the Releases page](https://github.com/GVCoder09/NoDPI4Android/releases) and install it
 2) Start server in the app
-3) In the Settings of Android set the proxy to 0.0.0.0:8881
+3) In the Settings of Android set the proxy to 127.0.0.1:8881
 4) Enjoy!
 
 Please report any problems and malfunctions to us on [the Issues page](https://github.com/GVCoder09/NoDPI4Android/issues)
 
-<hr>
+### Additional Blacklists
 
-1) [Скачайте](https://github.com/GVCoder09/NoDPI4Android/releases) последнюю версию утилиты и установите ее
-2) Запустите прокси, нажав кнопку **START SERVER** в приложении
-3) В настройках Android настройте прокси на 0.0.0.0:8881
-5) Наслаждайтесь!
+By default, a blacklist containing YouTube-only domains is used. Additional lists can be found [here](https://github.com/GVCoder09/NoDPI/tree/main/blacklists).
 
-О всех проблемах и неполадках, пожалуйста, сообщайте нам в [Issues](https://github.com/GVCoder09/NoDPI4Android/issues)
-
-
-## Building apk from source code / Сборка apk из исходного кода
+## Building APK from source code
 
 > [!WARNING]
 > You can only perform the building in Linux!
@@ -142,54 +171,20 @@ buildozer android deploy run
 
 For more information, see [here](https://habr.com/ru/articles/479236/) or [the documentation page](https://buildozer.readthedocs.io/en/latest/installation.html)
 
-<hr>
+## FAQ
 
-> [!WARNING]
-> Вы можете выполнить сборку только в  Linux!
+*Q: Is using NoDPI legal in Russia?*
 
-1) Убедитесь что у вас установлен Python версии 3.9 и выше.
-2) Выполните команды
-```bash
-sudo apt update
-sudo apt install -y git zip unzip openjdk-17-jdk python3-pip autoconf libtool pkg-config zlib1g-dev libncurses5-dev libncursesw5-dev libtinfo5 cmake libffi-dev libssl-dev
-pip3 install --user --upgrade Cython==0.29.33 virtualenv  # the --user should be removed if you do this in a venv
+A: Yes, its usage is completely legal as of October 2025. However, you can be held administratively liable for advertising and distributing tools designed to circumvent blocking.
 
-# add the following line at the end of your ~/.bashrc file
-export PATH=$PATH:~/.local/bin/
-```
-3) Перейдите в основной каталог и запустите сборку командой
-```bash
-buildozer android debug
-```
-3) Готово! Вы можете подключить свое устройство через adb и развернуть на нем приложение:
-```bash
-buildozer android deploy run
-```
+*Q: Is it safe?*
 
-За дополнительной информацией обращайтесь [сюда](https://habr.com/ru/articles/479236/) или на [страницу официальной документации](https://buildozer.readthedocs.io/en/latest/installation.html)
+A: Yes, using this utility is safe. All traffic sent over HTTPS remains encrypted as it was before. Furthermore, we do not collect any user information.
 
-## Known bugs / Известные проблемы
+*Q: Does this program mask my traffic? Can my ISP not see which sites I visit?*
 
-- Doesn't work at all. Yes, that can happen :(
-- Doesn't bypass IP block
-- Only TCP and HTTPS (HTTP ignored)
-- Not working with sites with old TLS
-- In some Android shells the service may die
-
-<hr>
-
-- Не работает вообще. Да, такое может быть :(
-- Не работает, если сайт заблокирован по IP
-- Только для TCP и HTTPS (HTTP игнорируется)
-- Не работает для сайтов со старым TLS
-- В некоторых Android оболочках сервис может умирать
+A: No. Unlike a VPN or Tor, this program does not hide your traffic from your Internet Service Provider (ISP). Your ISP can still see the IP addresses of the websites you connect to.
 
 ## Star History
 
 [![Star History Chart](https://api.star-history.com/svg?repos=GVCoder09/NoDPI4Android&type=Date)](https://www.star-history.com/#GVCoder09/NoDPI4Android&Date)
-
-## Thanks to the project participants / Благодарность участникам проекта
-
-[![Contributors](https://contrib.rocks/image?repo=GVCoder09/NoDPI4Android)](https://github.com/GVCoder09/NoDPI4Android/graphs/contributors)
-
-
