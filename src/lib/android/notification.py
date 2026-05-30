@@ -1,4 +1,8 @@
-from jnius import autoclass, cast #pylint: disable=no-name-in-module
+"""
+Android notifications
+"""
+
+from jnius import autoclass, cast  # pylint: disable=no-name-in-module
 
 String = autoclass("java.lang.String")
 
@@ -8,8 +12,9 @@ AppContext = Activity.getApplication().getApplicationContext()
 
 
 def create_notify_channel(
-        channel_id: str, channel_name: str, channel_description: str) -> None:
-    """ Creates notification channel """
+    channel_id: str, channel_name: str, channel_description: str
+) -> None:
+    """Creates notification channel"""
 
     NotificationManager = autoclass("android.app.NotificationManager")
     NotificationChannel = autoclass("android.app.NotificationChannel")
@@ -28,7 +33,7 @@ def create_notify_channel(
 
 
 def notify(id: int, channel_id: str, title: str, text: str, ticker: str = "") -> None:
-    """ Send notification """
+    """Send notification"""
 
     Builder = autoclass("android.app.Notification$Builder")
     Notification = autoclass("android.app.Notification")

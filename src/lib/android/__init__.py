@@ -1,3 +1,7 @@
+"""
+Android module
+"""
+
 from kivy import platform
 
 if platform != 'android':
