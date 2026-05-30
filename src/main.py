@@ -84,6 +84,24 @@ class ProxyApp(MDApp):
 
         return main_layout
 
+    def _create_navigation_bar(self):
+        """Create navigation bar"""
+
+        self.main_nav_item = NavigationItem(icon="play", text="Control")
+        self.blacklist_nav_item = NavigationItem(
+            icon="format-list-bulleted", text="Blacklist"
+        )
+        self.settings_nav_item = NavigationItem(icon="cog", text="Settings")
+        self.about_nav_item = NavigationItem(icon="information", text="About")
+
+        return MDNavigationBar(
+            self.main_nav_item,
+            self.blacklist_nav_item,
+            self.settings_nav_item,
+            self.about_nav_item,
+            on_switch_tabs=self.on_switch_tabs,
+        )
+
     def on_keyboard(self, window, key, *args):
         """Handle keyboard events"""
 
