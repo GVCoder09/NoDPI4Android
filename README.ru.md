@@ -187,4 +187,4 @@ buildozer android deploy run
 
 ## История звезд проекта
 
-[![Star History Chart](https://api.star-history.com/svg?repos=GVCoder09/NoDPI4Android&type=Date)](https://www.star-history.com/#GVCoder09/NoDPI4Android&Date)
+[![Star History Chart](https://star-history.dera.page/svg?repos=GVCoder09/NoDPI4Android&type=Date)](https://star-history.dera.page/#GVCoder09/NoDPI4Android&Date)
