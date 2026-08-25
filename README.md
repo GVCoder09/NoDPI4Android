@@ -4,7 +4,7 @@
   </p>
 </div>
 
-# NoDPI
+# NoDPI for Android
 <b><i>Say NO to blocking!</b></i>
 
 [![Visitors](https://visitor-badge.laobi.icu/badge?page_id=GVCoder09.NoDPI4Android)](https://github.com/GVCoder09/NoDPI4Android)
@@ -187,4 +187,4 @@ A: No. Unlike a VPN or Tor, this program does not hide your traffic from your In
 
 ## Star History
 
-[![Star History Chart](https://api.star-history.com/svg?repos=GVCoder09/NoDPI4Android&type=Date)](https://www.star-history.com/#GVCoder09/NoDPI4Android&Date)
+[![Star History Chart](https://star-history.dera.page/svg?repos=GVCoder09/NoDPI4Android&type=Date)](https://star-history.dera.page/#GVCoder09/NoDPI4Android&Date)
