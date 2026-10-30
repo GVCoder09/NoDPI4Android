@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name" translatable="false">NoDPI</string>
+    <string name="app_title" translatable="false">NoDPI</string>
+    <!-- The name and the slogan stay in English in every language -->
+    <string name="app_full_name" translatable="false">NoDPI for Android</string>
+    <string name="about_slogan" translatable="false">Say NO to blocking!</string>
+    <string name="language_english" translatable="false">English</string>
+    <string name="language_russian" translatable="false">Русский</string>
+
+    <!-- Navigation -->
+    <string name="nav_home">Home</string>
+    <string name="nav_blacklist">Blacklist</string>
+    <string name="nav_logs">Log</string>
+    <string name="nav_settings">Settings</string>
+
+    <!-- Common actions -->
+    <string name="action_start">Start</string>
+    <string name="action_stop">Stop</string>
+    <string name="action_restart">Restart</string>
+    <string name="action_copy">Copy</string>
+    <string name="action_more">More</string>
+    <string name="action_clear">Clear</string>
+    <string name="action_undo">Undo</string>
+    <string name="action_delete">Delete</string>
+    <string name="action_confirm">Confirm</string>
+    <string name="action_cancel">Cancel</string>
+    <string name="action_add">Add</string>
+    <string name="action_share">Share</string>
+    <string name="action_back">Back</string>
+    <string name="copied">Copied</string>
+
+    <!-- Notification -->
+    <string name="notification_channel">Proxy server</string>
+    <string name="notification_channel_description">Shown while the NoDPI proxy server is running</string>
+    <string name="notification_starting">NoDPI is starting…</string>
+    <string name="notification_running">NoDPI is running on %1$s</string>
+    <string name="notification_stats">↓ %1$s  ↑ %2$s  ·  unblocked: %3$d</string>
+
+    <!-- Status -->
+    <string name="status_running">Running</string>
+    <string name="status_starting">Starting…</string>
+    <string name="status_stopped">Stopped</string>
+    <string name="status_error">Error</string>
+    <string name="status_running_standard">Unblocking %1$d domains from the blacklist</string>
+    <string name="status_running_all">Unblocking all domains</string>
+    <string name="status_running_auto">Blacklist (%1$d) and automatic detection of blocked domains</string>
+    <string name="status_stopped_hint">Tap the button to start the proxy</string>
+    <string name="status_stopped_hint_disorder">Tap the button to start the proxy. Fragmentation with disorder is enabled</string>
+    <string name="error_address_in_use">Failed to start the proxy on %1$s: the port is already in use</string>
+    <string name="error_start_failed">Failed to start the proxy: %1$s</string>
+    <string name="pending_changes">Settings have changed. Restart the proxy to apply them</string>
+
+    <!-- Home -->
+    <string name="proxy_address">Proxy address</string>
+    <string name="proxy_lan_addresses">From other devices: %1$s</string>
+    <string name="statistics">Statistics</string>
+    <string name="stat_total">Connections</string>
+    <string name="stat_unblocked">Unblocked</string>
+    <string name="stat_direct">Direct</string>
+    <string name="stat_errors">Errors</string>
+    <string name="traffic_download">Download</string>
+    <string name="traffic_upload">Upload</string>
+    <string name="traffic_average">avg %1$s</string>
+    <string name="howto_title">How to use</string>
+    <string name="howto_body">NoDPI runs an HTTP(S) proxy server on your device. Traffic sent through it is unblocked: the ClientHello of blocked domains is fragmented around SNI and sent with disorder.\n\n1. Start the proxy.\n2. Open Wi-Fi settings, edit your network, set Proxy to Manual and enter the host and port shown above.\n3. Alternatively, set the proxy only in an app or browser that supports HTTP proxies.\n\nThe proxy does not change your IP address and does not encrypt traffic.</string>
+    <string name="howto_open_wifi">Open Wi-Fi settings</string>
+
+    <!-- Blacklist -->
+    <string name="blacklist_search">Search domains</string>
+    <string name="blacklist_add">Add</string>
+    <string name="blacklist_add_title">Add domains</string>
+    <string name="blacklist_add_hint">One or several domains separated by spaces, commas or new lines. Subdomains are covered automatically</string>
+    <string name="blacklist_import">Import from file</string>
+    <string name="blacklist_export">Export to file</string>
+    <string name="blacklist_reset">Reset to default</string>
+    <string name="blacklist_clear">Clear</string>
+    <string name="blacklist_reset_title">Reset the blacklist?</string>
+    <string name="blacklist_reset_text">The list will be replaced with the default YouTube domains</string>
+    <string name="blacklist_clear_title">Clear the blacklist?</string>
+    <string name="blacklist_clear_text">All domains will be removed</string>
+    <string name="blacklist_empty">The blacklist is empty</string>
+    <string name="blacklist_nothing_found">Nothing found</string>
+    <string name="blacklist_removed">%1$s removed</string>
+    <string name="blacklist_nothing_added">These domains are already in the blacklist</string>
+    <string name="blacklist_import_failed">Failed to read the file</string>
+    <string name="blacklist_exported">Blacklist exported</string>
+    <string name="blacklist_export_failed">Failed to write the file</string>
+    <string name="blacklist_mode_all_hint">The \"All domains\" mode is on: every domain is unblocked and the blacklist is not used</string>
+    <string name="blacklist_mode_auto_hint">The \"Auto\" mode is on: domains that turn out to be blocked are added here automatically</string>
+    <plurals name="blacklist_count">
+        <item quantity="one">%1$d domain</item>
+        <item quantity="other">%1$d domains</item>
+    </plurals>
+    <plurals name="blacklist_added">
+        <item quantity="one">%1$d domain added</item>
+        <item quantity="other">%1$d domains added</item>
+    </plurals>
+
+    <!-- Log -->
+    <string name="logs_filter_all">All</string>
+    <string name="logs_filter_unblocked">Unblocked</string>
+    <string name="logs_filter_direct">Direct</string>
+    <string name="logs_filter_errors">Errors</string>
+    <string name="logs_empty">No connections yet</string>
+    <string name="logs_add_to_blacklist">Add to blacklist</string>
+    <string name="logs_added_to_blacklist">%1$s added to the blacklist</string>
+    <string name="logs_cloudflare">Cloudflare: sent without fragmentation, it does not help there</string>
+
+    <!-- Settings -->
+    <string name="settings_proxy">Proxy server</string>
+    <string name="settings_host">Host</string>
+    <string name="settings_port">Port</string>
+    <string name="settings_port_invalid">Port must be between 1 and 65535</string>
+    <string name="settings_lan">Local network access</string>
+    <string name="settings_lan_desc">Listen on 0.0.0.0 so other devices (for example, via hotspot) can use the proxy</string>
+    <string name="settings_unblocking">Unblocking</string>
+    <string name="settings_mode">Domains to unblock</string>
+    <string name="settings_mode_standard">Blacklist</string>
+    <string name="settings_mode_all">All</string>
+    <string name="settings_mode_auto">Auto</string>
+    <string name="settings_mode_standard_desc">Only domains from the blacklist are unblocked</string>
+    <string name="settings_mode_all_desc">Every domain is unblocked, the blacklist is ignored. Sites on Cloudflare are sent without fragmentation: it cannot unblock them and only breaks them</string>
+    <string name="settings_mode_auto_desc">Blacklist plus automatic detection: a domain whose TLS handshake times out is added to the blacklist</string>
+    <string name="settings_matching">Domain matching</string>
+    <string name="settings_matching_strict">Strict</string>
+    <string name="settings_matching_loose">Loose</string>
+    <string name="settings_matching_strict_desc">The domain itself or any of its parent domains must be in the blacklist</string>
+    <string name="settings_matching_loose_desc">Also matches any domain that contains a blacklist entry</string>
+    <string name="settings_disorder">Disorder</string>
+    <string name="settings_disorder_desc">Send the first fragment with TTL 1 so that DPI sees fragments out of order. Turn off if sites stop opening</string>
+    <string name="settings_auth">Authentication</string>
+    <string name="settings_auth_enabled">Require password</string>
+    <string name="settings_auth_desc">Basic proxy authentication, useful with local network access</string>
+    <string name="settings_auth_username">Username</string>
+    <string name="settings_auth_password">Password</string>
+    <string name="settings_system">System</string>
+    <string name="settings_autostart">Start on boot</string>
+    <string name="settings_autostart_desc">Start the proxy automatically after the device boots</string>
+    <string name="settings_battery">Battery optimization</string>
+    <string name="settings_battery_ok">Unrestricted: the system will not stop the proxy</string>
+    <string name="settings_battery_restricted">Restricted: the system may stop the proxy in the background. Tap to allow</string>
+    <string name="settings_notifications">Notifications</string>
+    <string name="settings_notifications_ok">The proxy status is shown in the notification</string>
+    <string name="settings_notifications_off">Disabled: the proxy works, but its notification is hidden</string>
+    <string name="settings_appearance">Appearance</string>
+    <string name="settings_theme">Theme</string>
+    <string name="settings_theme_system">System</string>
+    <string name="settings_theme_light">Light</string>
+    <string name="settings_theme_dark">Dark</string>
+    <string name="settings_language">Language</string>
+    <string name="settings_language_system">System</string>
+    <string name="settings_dynamic_color">Dynamic color</string>
+    <string name="settings_dynamic_color_desc">Use colors from your wallpaper</string>
+
+    <!-- About -->
+    <string name="about_title">About</string>
+    <string name="about_summary">Version, links and disclaimer</string>
+    <string name="about_version">Version %1$s</string>
+    <string name="about_description">Android version of NoDPI, a utility for bypassing DPI. The proxy fragments the TLS ClientHello of blocked domains around SNI and sends it with disorder, exactly like the desktop version.</string>
+    <string name="about_links">Links</string>
+    <string name="about_source">Source code</string>
+    <string name="about_desktop">Desktop version (Windows, Linux)</string>
+    <string name="about_site">Website and documentation</string>
+    <string name="about_license">Licensed under GPL-3.0</string>
+    <string name="update_check">Check for updates</string>
+    <string name="update_checking">Checking…</string>
+    <string name="update_latest">You have the latest version</string>
+    <string name="update_available">Download version %1$s</string>
+    <string name="update_failed">Check failed, try again</string>
+
+    <!-- First launch -->
+    <string name="onboarding_title">Background work</string>
+    <string name="onboarding_text">To keep the proxy running when the app is closed, it is better to give it a little more freedom. You can change this later in Settings.</string>
+    <string name="onboarding_battery">Disable battery optimization</string>
+    <string name="onboarding_battery_desc">Otherwise the system may stop the proxy in the background</string>
+    <string name="onboarding_apply">Apply</string>
+    <string name="onboarding_skip">Skip</string>
+
+    <!-- Disclaimer -->
+    <string name="disclaimer_title">Disclaimer</string>
+    <string name="disclaimer_text">The developer and/or supplier of this software shall not be liable for any loss or damage, including but not limited to direct, indirect, incidental, punitive or consequential damages arising out of the use of or inability to use this software, even if the developer or supplier has been advised of the possibility of such damages. The developer and/or supplier of this software shall not be liable for any legal consequences arising out of the use of this software. This includes, but is not limited to, violation of laws, rules or regulations, as well as any claims or suits arising out of the use of this software. The user is solely responsible for compliance with all applicable laws and regulations when using this software.</string>
+    <string name="disclaimer_accept">Accept</string>
+    <string name="disclaimer_decline">Exit</string>
+</resources>

@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Navigation -->
+    <string name="nav_home">Главная</string>
+    <string name="nav_blacklist">Список</string>
+    <string name="nav_logs">Журнал</string>
+    <string name="nav_settings">Настройки</string>
+
+    <!-- Common actions -->
+    <string name="action_start">Запустить</string>
+    <string name="action_stop">Остановить</string>
+    <string name="action_restart">Перезапустить</string>
+    <string name="action_copy">Копировать</string>
+    <string name="action_more">Ещё</string>
+    <string name="action_clear">Очистить</string>
+    <string name="action_undo">Отменить</string>
+    <string name="action_delete">Удалить</string>
+    <string name="action_confirm">Подтвердить</string>
+    <string name="action_cancel">Отмена</string>
+    <string name="action_add">Добавить</string>
+    <string name="action_share">Поделиться</string>
+    <string name="action_back">Назад</string>
+    <string name="copied">Скопировано</string>
+
+    <!-- Notification -->
+    <string name="notification_channel">Прокси-сервер</string>
+    <string name="notification_channel_description">Показывается, пока работает прокси-сервер NoDPI</string>
+    <string name="notification_starting">NoDPI запускается…</string>
+    <string name="notification_running">NoDPI работает на %1$s</string>
+    <string name="notification_stats">↓ %1$s  ↑ %2$s  ·  разблокировано: %3$d</string>
+
+    <!-- Status -->
+    <string name="status_running">Работает</string>
+    <string name="status_starting">Запуск…</string>
+    <string name="status_stopped">Остановлен</string>
+    <string name="status_error">Ошибка</string>
+    <string name="status_running_standard">Разблокируются домены из списка: %1$d</string>
+    <string name="status_running_all">Разблокируются все домены</string>
+    <string name="status_running_auto">Список (%1$d) и автоопределение заблокированных доменов</string>
+    <string name="status_stopped_hint">Нажмите на кнопку, чтобы запустить прокси</string>
+    <string name="status_stopped_hint_disorder">Нажмите на кнопку, чтобы запустить прокси. Фрагментация с disorder включена</string>
+    <string name="error_address_in_use">Не удалось запустить прокси на %1$s: порт уже занят</string>
+    <string name="error_start_failed">Не удалось запустить прокси: %1$s</string>
+    <string name="pending_changes">Настройки изменились. Перезапустите прокси, чтобы применить их</string>
+
+    <!-- Home -->
+    <string name="proxy_address">Адрес прокси</string>
+    <string name="proxy_lan_addresses">С других устройств: %1$s</string>
+    <string name="statistics">Статистика</string>
+    <string name="stat_total">Соединения</string>
+    <string name="stat_unblocked">Разблокировано</string>
+    <string name="stat_direct">Напрямую</string>
+    <string name="stat_errors">Ошибки</string>
+    <string name="traffic_download">Загрузка</string>
+    <string name="traffic_upload">Отдача</string>
+    <string name="traffic_average">в среднем %1$s</string>
+    <string name="howto_title">Как пользоваться</string>
+    <string name="howto_body">NoDPI запускает на устройстве HTTP(S)-прокси-сервер. Трафик, идущий через него, разблокируется: ClientHello заблокированных доменов фрагментируется вокруг SNI и отправляется с disorder.\n\n1. Запустите прокси.\n2. Откройте настройки Wi-Fi, измените свою сеть, выберите прокси «Вручную» и укажите хост и порт, показанные выше.\n3. Или задайте прокси только в приложении или браузере, которые поддерживают HTTP-прокси.\n\nПрокси не меняет ваш IP-адрес и не шифрует трафик.</string>
+    <string name="howto_open_wifi">Открыть настройки Wi-Fi</string>
+
+    <!-- Blacklist -->
+    <string name="blacklist_search">Поиск доменов</string>
+    <string name="blacklist_add">Добавить</string>
+    <string name="blacklist_add_title">Добавить домены</string>
+    <string name="blacklist_add_hint">Один или несколько доменов через пробел, запятую или с новой строки. Поддомены учитываются автоматически</string>
+    <string name="blacklist_import">Импорт из файла</string>
+    <string name="blacklist_export">Экспорт в файл</string>
+    <string name="blacklist_reset">Сбросить по умолчанию</string>
+    <string name="blacklist_clear">Очистить</string>
+    <string name="blacklist_reset_title">Сбросить список?</string>
+    <string name="blacklist_reset_text">Список будет заменён доменами YouTube по умолчанию</string>
+    <string name="blacklist_clear_title">Очистить список?</string>
+    <string name="blacklist_clear_text">Все домены будут удалены</string>
+    <string name="blacklist_empty">Список пуст</string>
+    <string name="blacklist_nothing_found">Ничего не найдено</string>
+    <string name="blacklist_removed">%1$s удалён</string>
+    <string name="blacklist_nothing_added">Эти домены уже есть в списке</string>
+    <string name="blacklist_import_failed">Не удалось прочитать файл</string>
+    <string name="blacklist_exported">Список экспортирован</string>
+    <string name="blacklist_export_failed">Не удалось записать файл</string>
+    <string name="blacklist_mode_all_hint">Включён режим «Все»: разблокируются все домены, список не используется</string>
+    <string name="blacklist_mode_auto_hint">Включён режим «Авто»: домены, оказавшиеся заблокированными, добавляются сюда автоматически</string>
+    <plurals name="blacklist_count">
+        <item quantity="one">%1$d домен</item>
+        <item quantity="few">%1$d домена</item>
+        <item quantity="many">%1$d доменов</item>
+        <item quantity="other">%1$d домена</item>
+    </plurals>
+    <plurals name="blacklist_added">
+        <item quantity="one">Добавлен %1$d домен</item>
+        <item quantity="few">Добавлено %1$d домена</item>
+        <item quantity="many">Добавлено %1$d доменов</item>
+        <item quantity="other">Добавлено %1$d домена</item>
+    </plurals>
+
+    <!-- Log -->
+    <string name="logs_filter_all">Все</string>
+    <string name="logs_filter_unblocked">Разблокированные</string>
+    <string name="logs_filter_direct">Напрямую</string>
+    <string name="logs_filter_errors">Ошибки</string>
+    <string name="logs_empty">Соединений пока нет</string>
+    <string name="logs_add_to_blacklist">Добавить в список</string>
+    <string name="logs_added_to_blacklist">%1$s добавлен в список</string>
+    <string name="logs_cloudflare">Cloudflare: отправлено без фрагментации, там она не помогает</string>
+
+    <!-- Settings -->
+    <string name="settings_proxy">Прокси-сервер</string>
+    <string name="settings_host">Хост</string>
+    <string name="settings_port">Порт</string>
+    <string name="settings_port_invalid">Порт должен быть от 1 до 65535</string>
+    <string name="settings_lan">Доступ из локальной сети</string>
+    <string name="settings_lan_desc">Слушать 0.0.0.0, чтобы прокси могли использовать другие устройства (например, через точку доступа)</string>
+    <string name="settings_unblocking">Разблокировка</string>
+    <string name="settings_mode">Какие домены разблокировать</string>
+    <string name="settings_mode_standard">Список</string>
+    <string name="settings_mode_all">Все</string>
+    <string name="settings_mode_auto">Авто</string>
+    <string name="settings_mode_standard_desc">Разблокируются только домены из списка</string>
+    <string name="settings_mode_all_desc">Разблокируются все домены, список игнорируется. Сайты на Cloudflare отправляются без фрагментации: там она ничего не разблокирует, а только ломает их</string>
+    <string name="settings_mode_auto_desc">Список и автоопределение: домен, у которого TLS-рукопожатие завершается по таймауту, добавляется в список</string>
+    <string name="settings_matching">Сопоставление доменов</string>
+    <string name="settings_matching_strict">Строгое</string>
+    <string name="settings_matching_loose">Нестрогое</string>
+    <string name="settings_matching_strict_desc">В списке должен быть сам домен или любой из его родительских доменов</string>
+    <string name="settings_matching_loose_desc">Также подходит любой домен, содержащий запись из списка</string>
+    <string name="settings_disorder">Disorder</string>
+    <string name="settings_disorder_desc">Отправлять первый фрагмент с TTL 1, чтобы DPI видел фрагменты не по порядку. Отключите, если сайты перестали открываться</string>
+    <string name="settings_auth">Аутентификация</string>
+    <string name="settings_auth_enabled">Требовать пароль</string>
+    <string name="settings_auth_desc">Basic-аутентификация прокси, полезна при доступе из локальной сети</string>
+    <string name="settings_auth_username">Имя пользователя</string>
+    <string name="settings_auth_password">Пароль</string>
+    <string name="settings_system">Система</string>
+    <string name="settings_autostart">Запуск при загрузке</string>
+    <string name="settings_autostart_desc">Автоматически запускать прокси после включения устройства</string>
+    <string name="settings_battery">Оптимизация батареи</string>
+    <string name="settings_battery_ok">Без ограничений: система не остановит прокси</string>
+    <string name="settings_battery_restricted">Ограничено: система может остановить прокси в фоне. Нажмите, чтобы разрешить</string>
+    <string name="settings_notifications">Уведомления</string>
+    <string name="settings_notifications_ok">Состояние прокси показывается в уведомлении</string>
+    <string name="settings_notifications_off">Отключены: прокси работает, но его уведомление скрыто</string>
+    <string name="settings_appearance">Оформление</string>
+    <string name="settings_theme">Тема</string>
+    <string name="settings_theme_system">Системная</string>
+    <string name="settings_theme_light">Светлая</string>
+    <string name="settings_theme_dark">Тёмная</string>
+    <string name="settings_language">Язык</string>
+    <string name="settings_language_system">Системный</string>
+    <string name="settings_dynamic_color">Динамические цвета</string>
+    <string name="settings_dynamic_color_desc">Использовать цвета обоев</string>
+
+    <!-- About -->
+    <string name="about_title">О приложении</string>
+    <string name="about_summary">Версия, ссылки и отказ от ответственности</string>
+    <string name="about_version">Версия %1$s</string>
+    <string name="about_description">Android-версия NoDPI — утилиты для обхода DPI. Прокси фрагментирует TLS ClientHello заблокированных доменов вокруг SNI и отправляет его с disorder — так же, как десктопная версия.</string>
+    <string name="about_links">Ссылки</string>
+    <string name="about_source">Исходный код</string>
+    <string name="about_desktop">Десктопная версия (Windows, Linux)</string>
+    <string name="about_site">Сайт и документация</string>
+    <string name="about_license">Распространяется под лицензией GPL-3.0</string>
+    <string name="update_check">Проверить обновления</string>
+    <string name="update_checking">Проверка…</string>
+    <string name="update_latest">У вас последняя версия</string>
+    <string name="update_available">Скачать версию %1$s</string>
+    <string name="update_failed">Не удалось проверить, повторите</string>
+
+    <!-- First launch -->
+    <string name="onboarding_title">Работа в фоне</string>
+    <string name="onboarding_text">Чтобы прокси продолжал работать, когда приложение закрыто, лучше дать ему чуть больше свободы. Это можно изменить позже в настройках.</string>
+    <string name="onboarding_battery">Отключить оптимизацию батареи</string>
+    <string name="onboarding_battery_desc">Иначе система может остановить прокси в фоне</string>
+    <string name="onboarding_apply">Применить</string>
+    <string name="onboarding_skip">Пропустить</string>
+
+    <!-- Disclaimer -->
+    <string name="disclaimer_title">Отказ от ответственности</string>
+    <string name="disclaimer_text">Разработчик и/или поставщик данного программного обеспечения не несёт ответственности за любые убытки или ущерб, включая, помимо прочего, прямые, косвенные, случайные, штрафные или последующие убытки, возникшие в результате использования или невозможности использования данного программного обеспечения, даже если разработчик или поставщик был уведомлён о возможности таких убытков. Разработчик и/или поставщик данного программного обеспечения не несёт ответственности за любые юридические последствия, возникшие в результате использования данного программного обеспечения. Это включает, помимо прочего, нарушение законов, правил или нормативных актов, а также любые претензии или иски, связанные с использованием данного программного обеспечения. Пользователь несёт единоличную ответственность за соблюдение всех применимых законов и нормативных актов при использовании данного программного обеспечения.</string>
+    <string name="disclaimer_accept">Принимаю</string>
+    <string name="disclaimer_decline">Выйти</string>
+</resources>

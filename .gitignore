@@ -1,3 +1,20 @@
-__pycache__
-/bin
-/.buildozer
+# Gradle / Android Studio
+.gradle/
+.kotlin/
+build/
+/local.properties
+/captures
+.idea/
+*.iml
+.cxx/
+.externalNativeBuild
+
+# Build outputs
+*.apk
+*.aab
+
+# Release signing: never commit keys or their passwords
+keystore.properties
+*.jks
+*.keystore
+/keys/

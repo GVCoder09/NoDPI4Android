@@ -24,15 +24,13 @@
 
 🌐 **[Website & Documentation](https://gvcoder09.github.io/nodpi_site/)** - user-friendly guide and overview
 
-💬 **[NoDPI Lab](https://nodpi.forumotion.com/)** — community forum for NoDPI, DPI, network filtering and circumvention
-
 **Read this in other languages / Читайте на других языках**
 - **[English](README.md)**
 - [Русский](README.ru.md)
 
 ## Table of Content
 
-- [NoDPI](#nodpi)
+- [NoDPI for Android](#nodpi-for-android)
   - [Table of Content](#table-of-content)
   - [Description](#description)
     - [How does this work](#how-does-this-work)
@@ -65,34 +63,31 @@
 
 ### How does this work
 
-NoDPI launches a proxy server on your computer through which you direct http(s) traffic. The program intercepts ClientHello of outing connections and fragments them according to one of the following methods:
+NoDPI launches a proxy server on your device through which you direct http(s) traffic. The program intercepts ClientHello of outing connections and fragments them according to the following method:
 
-*Fragmentation by SNI  (by default)*
+The packet contains a field that holds the SNI record. The ClientHello message is split into several TLS records: the portion preceding the SNI, the portion containing the SNI (character by character), and the portion following the SNI. A header indicating the ClientHello type is added to each of these parts. Unless out-of-order packet handling (disordering) is disabled, the first of these parts is sent with a TTL=1, causing it to be dropped by the nearest network device. As a result, the DPI (Deep Packet Inspection) system fails to identify the domain for which the connection is being established and allows the connection to proceed. The operating system subsequently retransmits the first part with a standard TTL.
 
-The packet contains a field containing the SNI record. The ClientHello is split into several TLS records: the pre-SNI portion, the SNI character-by-character, and the post-SNI portion. Each portion is appended with a header indicating the ClientHello type, and then the entire packet is sent in a single packet.
+Also, the TLS version is replaced by version 1.3, which is the most modern (but this does not mean that your data begins to be transmitted according to the specifications of this version). All this together allows you to get around the lock.
 
-*Random fragmentation*
-
-Clienthello is divided into several parts of random length. Each part is glued with the prefixes of the type of Clienthello and then all this is sent in one package.
-
-Also regardless of the method, the TLS version is replaced by version 1.3, which is the most modern (but this does not mean that your data begins to be transmitted according to the specifications of this version). All this together allows you to get around the lock. Apparently DPI does not yet have the necessary capacities to unravel this "ball" and simply ignore such traffic, saving time and effort. But it is possible that soon these methods will not be workers.
+> [!NOTE]
+> Sites hosted on Cloudflare are sent without fragmentation. DPI treats connections to Cloudflare differently: a blocked domain is dropped even when fragmented, and a connection whose domain DPI could not read is frozen after the first ~16 KB. Fragmentation cannot unblock such sites and only breaks the allowed ones.
 
 > [!IMPORTANT]
 > NoDPI only works with HTTPS traffic. He can also take HTTP traffic, but purely for compatibility - sites working through this outdated protocol are practically not subject to unlock and the program simply sends traffic to the addressee.
 
-NoDPI does not collect and does not send any data about you, does not use any third - party programs and libraries, does not interfere in the system processes and does not require administrator rights to work.
+NoDPI does not collect and does not send any data about you, does not use any third-party programs, does not interfere in the system processes and does not require root rights to work.
 
-All code is written entirely in Python and uses libraries such as Kivy and KivyMD
+The app is written in Kotlin with Jetpack Compose (Material 3 Expressive). The proxy runs in a foreground service and can be toggled from a quick settings tile.
 
 ### Sites currently unavailable via NoDPI
 
-As of May 2026, the following services and websites cannot be unblocked using NoDPI:
-- Instagram
-- Facebook
-- X (Twitter)
+As of October 2026, the following services and websites cannot be unblocked using NoDPI:
 - Telegram
 - WhatsApp 
 - Voice and video in Discord
+- Blocked sites hosted on Cloudflare
+
+All sites blocked by IP address are also unavailable.
 
 ### Alternatives
 
@@ -104,7 +99,7 @@ As of May 2026, the following services and websites cannot be unblocked using No
 
 #### Other platforms
 
-- **[NoDPI](https://github.com/GVCoder09/GoodbyeDPI)** by @GVCoder09 (for Windows and Linux)
+- **[NoDPI](https://github.com/GVCoder09/NoDPI)** by @GVCoder09 (for Windows and Linux)
 - **[GoodbyeDPI](https://github.com/ValdikSS/GoodbyeDPI)** by @ValdikSS (for Windows)
 - **[zapret](https://github.com/bol-van/zapret)** by @bol-van (for MacOS, Linux and Windows)
 - **[Green Tunnel](https://github.com/SadeghHayeri/GreenTunnel)** by @SadeghHayeri (for MacOS, Linux and Windows)
@@ -139,8 +134,8 @@ Your use of this software constitutes your agreement to the terms of this discla
 ## Quick start
 
 1) Download the latest version from [the Releases page](https://github.com/GVCoder09/NoDPI4Android/releases) and install it
-2) Start server in the app
-3) In the Settings of Android set the proxy to 127.0.0.1:8881
+2) Start the proxy with the power button on the main screen
+3) In the Wi-Fi settings of Android set the proxy to manual, host 127.0.0.1, port 8881
 4) Enjoy!
 
 Please report any problems and malfunctions to us on [the Issues page](https://github.com/GVCoder09/NoDPI4Android/issues)
@@ -151,29 +146,19 @@ By default, a blacklist containing YouTube-only domains is used. Additional list
 
 ## Building APK from source code
 
-> [!WARNING]
-> You can only perform the building in Linux!
-
-1) Make sure you have Python 3.9 or higher installed.
-2) Run the commands
+1) Install [Android Studio](https://developer.android.com/studio) (or JDK 17+ and the Android SDK with platform 36).
+2) Open the project in Android Studio and press *Run*, or build from the command line:
 ```bash
-sudo apt update
-sudo apt install -y git zip unzip openjdk-17-jdk python3-pip autoconf libtool pkg-config zlib1g-dev libncurses5-dev libncursesw5-dev libtinfo5 cmake libffi-dev libssl-dev
-pip3 install --user --upgrade Cython==0.29.33 virtualenv  # the --user should be removed if you do this in a venv
-
-# add the following line at the end of your ~/.bashrc file
-export PATH=$PATH:~/.local/bin/
+./gradlew assembleDebug
 ```
-3) Go to the main directory and run the building with the command
+On Windows use `gradlew.bat assembleDebug`. The APK will be in `app/build/outputs/apk/debug/`.
+
+3) Install it on a device connected via adb:
 ```bash
-buildozer android debug
-```
-3) Ready! You can connect the device via adb and deploy the application:
-```bash
-buildozer android deploy run
+./gradlew installDebug
 ```
 
-For more information, see [here](https://habr.com/ru/articles/479236/) or [the documentation page](https://buildozer.readthedocs.io/en/latest/installation.html)
+Unit tests of the fragmentation and blacklist logic: `./gradlew testDebugUnitTest`.
 
 ## FAQ
 

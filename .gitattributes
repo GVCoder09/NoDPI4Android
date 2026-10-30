@@ -1,0 +1,8 @@
+# Shell scripts must keep LF even on Windows checkouts with core.autocrlf=true
+gradlew text eol=lf
+*.sh text eol=lf
+*.bat text eol=crlf
+
+*.jar binary
+*.png binary
+*.jks binary

@@ -45,8 +45,9 @@ jobs:
         include:
         - language: actions
           build-mode: none
-        - language: python
-          build-mode: none
+        # Kotlin needs a real build to be analyzed
+        - language: java-kotlin
+          build-mode: manual
         # CodeQL supports the following values keywords for 'language': 'actions', 'c-cpp', 'csharp', 'go', 'java-kotlin', 'javascript-typescript', 'python', 'ruby', 'swift'
         # Use `c-cpp` to analyze code written in C, C++ or both
         # Use 'java-kotlin' to analyze code written in Java, Kotlin or both
@@ -59,11 +60,13 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v4
 
-    # Add any setup steps before running the `github/codeql-action/init` action.
-    # This includes steps like installing compilers or runtimes (`actions/setup-node`
-    # or others). This is typically only required for manual builds.
-    # - name: Setup runtime (example)
-    #   uses: actions/setup-example@v1
+    # The Android SDK is preinstalled on ubuntu-latest; AGP 8.13 needs JDK 17+
+    - name: Set up JDK
+      if: matrix.language == 'java-kotlin'
+      uses: actions/setup-java@v4
+      with:
+        distribution: temurin
+        java-version: '17'
 
     # Initializes the CodeQL tools for scanning.
     - name: Initialize CodeQL
@@ -87,12 +90,8 @@ jobs:
     - if: matrix.build-mode == 'manual'
       shell: bash
       run: |
-        echo 'If you are using a "manual" build mode for one or more of the' \
-          'languages you are analyzing, replace this with the commands to build' \
-          'your code, for example:'
-        echo '  make bootstrap'
-        echo '  make release'
-        exit 1
+        chmod +x gradlew
+        ./gradlew assembleDebug --no-daemon --no-build-cache
 
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v3
